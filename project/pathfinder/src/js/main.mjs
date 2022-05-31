@@ -102,6 +102,10 @@ export default class main {
     }
 
     async calcPath(board) {
+        document.querySelectorAll('.square').forEach(elm => {
+            elm.classList.remove('visted');
+            elm.classList.remove('path');
+        })
         console.log('Importing path data');
         const pathFinder = await SetupPathFinder.build();
         board.getBoard().forEach(row => pathFinder.addRow(row));
