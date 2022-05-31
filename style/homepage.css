@@ -1,0 +1,13 @@
+.jumbotron {
+    background-image: url("../images/DSC_0062.jpg");
+    background-size: cover;
+    /* <------ */
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* optional, center the image */
+}
+
+.iconImage {
+    height: 100%;
+    object-fit: cover;
+}
