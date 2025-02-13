@@ -7,7 +7,7 @@ const projects = [
   
   const blogs = [
     { title: "Blog Post 1", summary: "Summary of blog post 1", link: "blog/blog-post-1.html" },
-    { title: "Blog Post 2", summary: "Summary of blog post 2", link: "blog/blog-post-2.html" }
+    { title: "Blog Post 2", summary: "Summary of blog post 2 ", link: "blog/blog-post-2.html" }
   ];
   
   /**
