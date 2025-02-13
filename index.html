@@ -1,74 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="site.css" type="">
-    <link rel="stylesheet" href="style/homepage.css" type="">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .cursor {
+            animation: blink 1s infinite;
+            display: inline-block;
+            width: 10px;
+            height: 1.2em;
+            background-color: #00ff00;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .ascii-box {
+            margin: 20px 0;
+            white-space: pre;
+        }
+
+        .command {
+            margin: 20px 0;
+        }
+
+        .command::before {
+            content: "$ ";
+            color: #00ff00;
+        }
+
+        a {
+            color: #00ff00;
+            text-decoration: none;
+            border-bottom: 1px dotted #00ff00;
+        }
+
+        a:hover {
+            border-bottom-style: solid;
+        }
+
+        .table-container {
+            margin: 20px 0;
+            white-space: pre;
+            line-height: 1.2;
+        }
+    </style>
 </head>
-
 <body>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Portfolio</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <!-- <li><a href="#">About</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Contact</a></li> -->
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div class="command">whoami</div>
+    <div class="ascii-box">
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█ Your Name    █
+█ Developer    █
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</div>
 
-    <div class="jumbotron">
-        <div class="container text-center">
-            <h1>My Portfolio</h1>
-            <p>Liam F Branchett</p>
-        </div>
-    </div>
+    <div class="command">cat about.txt</div>
+    <p>A brief description about yourself and what you do. Make it sound like you're writing from a terminal!</p>
 
-    <div class="container-fluid bg-3 text-center">
-        <h3>Some of my Work</h3>
-        <div class="row">
-            <div class="col-sm-4">
-                <p>Node.js API, Using MVC pattern</p>
-                <img src="images/nodeAPIRight43.png" class="img-responsive iconImage" style="width:100%;"
-                    alt="Code of node.js">
-            </div>
-            <div class="col-sm-4">
-                <p>Path Finder Client</p>
-                <a href="/project/pathfinder/index.html">
-                    <img src="images/nodeAPILeft43.png" class="img-responsive" style="width:100%" alt="Image">
-                </a>
-            </div>
-            <div class="col-sm-4">
-                <p>Electronics</p>
-                <img src="images/audiono.jpg" class="img-responsive" style="width:100%" alt="Image">
-            </div>
+    <div class="command">ls projects/</div>
+    <div class="table-container">╔══════════════════╦══════════════════════════╗
+║ Project Name     ║ Description              ║
+╠══════════════════╬══════════════════════════╣
+║ Project A        ║ Description of project A ║
+║ Project B        ║ Description of project B ║
+║ Project C        ║ Description of project C ║
+╚══════════════════╩══════════════════════════╝</div>
 
-        </div>
-    </div>
+    <div class="command">cat blog_posts.txt</div>
+    <div class="table-container">╔══════════════════╦══════════════════════════╗
+║ Post Title       ║ Preview                  ║
+╠══════════════════╬══════════════════════════╣
+║ First Post       ║ Brief excerpt from post  ║
+║ Second Post      ║ Another excerpt here     ║
+╚══════════════════╩══════════════════════════╝</div>
 
-    <footer class="container-fluid text-center">
-    </footer>
+    <div class="command">contact --list-all</div>
+    <div class="ascii-box">┌─────────────────────────────┐
+│ GitHub:   @yourusername     │
+│ LinkedIn: /in/yourusername  │
+│ Email:    you@example.com   │
+└─────────────────────────────┘</div>
 
+    <span class="cursor"></span>
 </body>
-
 </html>
