@@ -1,0 +1,68 @@
+/* Base styles you provided */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .cursor {
+    animation: blink 1s infinite;
+    display: inline-block;
+    width: 10px;
+    height: 1.2em;
+    background-color: #00ff00;
+    vertical-align: middle;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  
+  .command {
+    margin: 20px 0;
+  }
+  
+  .command::before {
+    content: "$ ";
+    color: #00ff00;
+  }
+  
+  a {
+    color: #00ff00;
+    text-decoration: underline; /* Always underlined */
+    border-bottom: none;
+  }
+  
+  a:hover {
+    text-decoration: underline; /* No change on hover */
+  }
+  
+  .ascii-box {
+    margin: 20px 0;
+    white-space: pre;
+  }
+  
+  /* Styles for our ASCII table container */
+  .table-container {
+    margin: 20px 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: #00ff00;
+  }
+  
+  /* Optional: ensure the links inside the ASCII table inherit the same style */
+  .ascii-row a {
+    color: #00ff00;
+    text-decoration: underline;
+  }
+  

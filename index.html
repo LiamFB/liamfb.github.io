@@ -4,95 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminal Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #000;
-            color: #00ff00;
-            font-family: 'Courier New', Courier, monospace;
-            line-height: 1.6;
-            padding: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .cursor {
-            animation: blink 1s infinite;
-            display: inline-block;
-            width: 10px;
-            height: 1.2em;
-            background-color: #00ff00;
-            vertical-align: middle;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 0; }
-            50% { opacity: 1; }
-        }
-
-        .ascii-box {
-            margin: 20px 0;
-            white-space: pre;
-        }
-
-        .command {
-            margin: 20px 0;
-        }
-
-        .command::before {
-            content: "$ ";
-            color: #00ff00;
-        }
-
-        a {
-            color: #00ff00;
-            text-decoration: none;
-            border-bottom: 1px dotted #00ff00;
-        }
-
-        a:hover {
-            border-bottom-style: solid;
-        }
-
-        .table-container {
-            margin: 20px 0;
-            white-space: pre;
-            line-height: 1.2;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="command">whoami</div>
     <div class="ascii-box">
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-█ Your Name    █
-█ Developer    █
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</div>
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█ Liam Branchett    █
+█ Software Engineer █
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</div>
 
     <div class="command">cat about.txt</div>
     <p>A brief description about yourself and what you do. Make it sound like you're writing from a terminal!</p>
 
     <div class="command">ls projects/</div>
-    <div class="table-container">╔══════════════════╦══════════════════════════╗
-║ Project Name     ║ Description              ║
-╠══════════════════╬══════════════════════════╣
-║ Project A        ║ Description of project A ║
-║ Project B        ║ Description of project B ║
-║ Project C        ║ Description of project C ║
-╚══════════════════╩══════════════════════════╝</div>
+    <div class="table-container" id="projects-table"></div>
 
     <div class="command">cat blog_posts.txt</div>
-    <div class="table-container">╔══════════════════╦══════════════════════════╗
-║ Post Title       ║ Preview                  ║
-╠══════════════════╬══════════════════════════╣
-║ First Post       ║ Brief excerpt from post  ║
-║ Second Post      ║ Another excerpt here     ║
-╚══════════════════╩══════════════════════════╝</div>
+    <div class="table-container" id="blog-table"></div>
 
     <div class="command">contact --list-all</div>
     <div class="ascii-box">┌─────────────────────────────┐
@@ -102,5 +31,9 @@
 └─────────────────────────────┘</div>
 
     <span class="cursor"></span>
+    <script src="script.js"></script>
+
+    <div id="projects-table"></div>
+
 </body>
 </html>
