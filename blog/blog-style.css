@@ -1,0 +1,54 @@
+/* Base styles to match your terminal aesthetic */
+body {
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  
+  /* Blog post container */
+  .ascii-blog-post {
+    position: relative;
+    padding: 20px;
+    background-color: #000;
+    color: #00ff00;
+    margin: 20px 0;
+    /* Optional: a little inner padding to separate text from the borders */
+  }
+  
+  /* We'll simulate ASCII borders using pseudo-elements */
+  .ascii-blog-post::before,
+  .ascii-blog-post::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: #00ff00;
+  }
+  
+  /* Top border */
+  .ascii-blog-post::before {
+    top: -1.2em;
+    text-align: center;
+    /* We'll use a data attribute (set via JS) for the dynamic border line */
+    content: "╔" attr(data-border) "╗";
+  }
+  
+  /* Bottom border */
+  .ascii-blog-post::after {
+    bottom: -1.2em;
+    text-align: center;
+    content: "╚" attr(data-border) "╝";
+  }
+  
+  /* Left and right borders for the content */
+  .ascii-blog-post header,
+  .ascii-blog-post article {
+    border-left: 1px solid #00ff00;
+    border-right: 1px solid #00ff00;
+    padding: 0 10px;
+  }
+  
