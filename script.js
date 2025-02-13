@@ -6,8 +6,8 @@ const projects = [
   ];
   
   const blogs = [
-    { title: "Blog Post 1", summary: "Summary of blog post 1", link: "blog/blog-post-1.html" },
-    { title: "Blog Post 2", summary: "Summary of blog post 2 ", link: "blog/blog-post-2.html" }
+    { title: "Blog Post 1", summary: "Summary of blog post 1", link: "blog/blog-post-1.html", tags: "security" },
+    { title: "Blog Post 2", summary: "Summary of blog post 2 ", link: "blog/blog-post-2.html", tags: "" }
   ];
   
   /**
@@ -97,8 +97,8 @@ const projects = [
   
   // --- Generate the Blogs ASCII table ---
   // For blogs, make the title clickable.
-  const blogHeaders = ["Title", "Summary"];
-  const blogRows = blogs.map(b => [b.title, b.summary]);
+  const blogHeaders = ["Title", "Summary", "Tags"];
+  const blogRows = blogs.map(b => [b.title, b.summary, b.tags]);
   const blogClickable = blogs.map(b => ({ 0: b.link }));
   const blogTable = generateAsciiTable(blogHeaders, blogRows, blogClickable);
   document.getElementById("blog-table").appendChild(blogTable);
